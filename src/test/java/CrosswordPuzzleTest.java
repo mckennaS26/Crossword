@@ -347,16 +347,20 @@ public class CrosswordPuzzleTest {
         Object puzzle = newInstance(cpCtor, 5, 5);
         Object grid   = invoke(getGrid, puzzle);
 
+        // ARRAY across at row 2: A(c0) R(c1) R(c2) A(c3) Y(c4)
+        // ARROW down  at col 2:  A(r0) R(r1) R(r2) O(r3) W(r4)
+        // Intersection at [2][2]: ARRAY[2]='R' == ARROW[2]='R' ✓
         invoke(placeWord, puzzle, newInstance(weCtor, "ARRAY", 2, 0, true));
-        invoke(placeWord, puzzle, newInstance(weCtor, "RAIN",  0, 2, false));
+        invoke(placeWord, puzzle, newInstance(weCtor, "ARROW", 0, 2, false));
 
         assertEquals('A', (char) invoke(getCell, grid, 2, 0), "ARRAY[0] should be 'A'.");
         assertEquals('R', (char) invoke(getCell, grid, 2, 1), "ARRAY[1] should be 'R'.");
-        assertEquals('A', (char) invoke(getCell, grid, 2, 2), "Intersection at [2][2] should be 'A'.");
+        assertEquals('R', (char) invoke(getCell, grid, 2, 2), "Intersection at [2][2] should be 'R' (ARRAY[2] == ARROW[2]).");
         assertEquals('Y', (char) invoke(getCell, grid, 2, 4), "ARRAY[4] should be 'Y'.");
-        assertEquals('R', (char) invoke(getCell, grid, 0, 2), "RAIN[0] should be 'R'.");
-        assertEquals('A', (char) invoke(getCell, grid, 1, 2), "RAIN[1] should be 'A'.");
-        assertEquals('N', (char) invoke(getCell, grid, 3, 2), "RAIN[3] should be 'N'.");
+        assertEquals('A', (char) invoke(getCell, grid, 0, 2), "ARROW[0] should be 'A'.");
+        assertEquals('R', (char) invoke(getCell, grid, 1, 2), "ARROW[1] should be 'R'.");
+        assertEquals('O', (char) invoke(getCell, grid, 3, 2), "ARROW[3] should be 'O'.");
+        assertEquals('W', (char) invoke(getCell, grid, 4, 2), "ARROW[4] should be 'W'.");
     }
 
     @Test

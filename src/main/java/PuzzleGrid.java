@@ -3,8 +3,17 @@ public class PuzzleGrid {
     //   private char[][] grid
     //   private int rows
     //   private int cols
+    private char[][] grid;
+    private int rows;
+    private  int cols;
 
     // TODO: Write the constructor
+    public PuzzleGrid(int rows, int cols) {
+        this.rows = rows;
+        this.cols = cols;
+        grid = new char[rows][cols];
+
+    }
     //   public PuzzleGrid(int rows, int cols)
     //   - store rows and cols
     //   - create a new char[rows][cols] and store it in grid

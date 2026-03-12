@@ -1,9 +1,11 @@
 public class CrosswordPuzzle {
     // TODO: Declare fields here
-    private PuzzleGrid grid
+    private PuzzleGrid grid;
 
     // TODO: Write the constructor
-    public CrosswordPuzzle(int rows, int cols)
+    public CrosswordPuzzle(int rows, int cols) {
+        grid = new PuzzleGrid(rows, cols);
+    }
     //   - create a new PuzzleGrid with the given rows and cols
     //   - store it in grid
 

@@ -20,15 +20,28 @@ public class PuzzleGrid {
     //   - fill every cell with '#'
 
     // TODO: Write getters
-    //   public int getRows()
-    //   public int getCols()
-    //   public char getCell(int row, int col)
+    public int getRows() {
+        return rows;
+    }
+    public int getCols() {
+        return cols;
+    }
+    public char getCell(int row, int col) {
+        return grid[row][col];
+    }
 
     // TODO: Write mutator
-    //   public void setCell(int row, int col, char value)
+    public void setCell(int row, int col, char value) {
+        grid[row][col] = value;
+    }
 
     // TODO: Write getRowAsString
-    //   public String getRowAsString(int row)
+    public String getRowAsString(int row) {
+        String rowString ="";
+        for() {
+            rowString += grid[row][col];
+        }
+    }
     //   - return all characters in the given row as a single String
     //   - build the string character by character using a loop
 }

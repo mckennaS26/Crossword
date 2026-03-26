@@ -12,6 +12,12 @@ public class PuzzleGrid {
         this.rows = rows;
         this.cols = cols;
         grid = new char[rows][cols];
+        for(int r = 0; r < rows; r++ ) {
+            for(int c = 0; c < cols; c++) {
+                grid[r][c] = '#';
+
+            }
+        }
 
     }
     //   public PuzzleGrid(int rows, int cols)
@@ -38,9 +44,10 @@ public class PuzzleGrid {
     // TODO: Write getRowAsString
     public String getRowAsString(int row) {
         String rowString ="";
-        for() {
-            rowString += grid[row][col];
+        for(int c = 0; c < grid[row].length; c++) {
+            rowString += grid[row][c];
         }
+        return rowString;
     }
     //   - return all characters in the given row as a single String
     //   - build the string character by character using a loop

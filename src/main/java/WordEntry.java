@@ -29,6 +29,8 @@ public class WordEntry {
     }
 
     // TODO: Write length()
-    public int length()
+    public int length() {
+        return word.length();
+    }
     //   - returns the number of characters in word
 }

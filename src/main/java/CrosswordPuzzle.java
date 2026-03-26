@@ -10,7 +10,9 @@ public class CrosswordPuzzle {
     //   - store it in grid
 
     // TODO: Write getter
-    public PuzzleGrid getGrid()
+    public PuzzleGrid getGrid() {
+        return grid;
+    }
 
     // TODO: Write placeWord(WordEntry entry)
     public void placeWord(WordEntry entry)
